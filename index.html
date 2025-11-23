@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sindhuja Sekaran | Project Manager Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Sindhuja Sekaran - Project Manager specializing in IT Service Management, DevOps, AIOps, cloud operations, and automation-led service delivery." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1120;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #020617 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6b7280;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 32px;
+      margin-bottom: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(32px, 4vw, 40px);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .hero-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .hero-role span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+    }
+
+    .hero-summary {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 640px;
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag-pill {
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.6);
+      color: #cbd5f5;
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      background: none;
+      color: var(--text);
+      transition: all 0.18s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #0284c7, #22d3ee);
+      color: #0b1120;
+      font-weight: 600;
+      box-shadow: 0 15px 35px rgba(8, 47, 73, 0.8);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 45px rgba(8, 47, 73, 0.95);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* Hero card */
+    .hero-card {
+      background: radial-gradient(circle at top, #0f172a 0, #020617 48%);
+      border-radius: 24px;
+      padding: 22px 20px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px;
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.18), transparent 56%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+      margin-bottom: 12px;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      color: #cbd5f5;
+    }
+
+    .metric-row strong {
+      font-size: 18px;
+      display: block;
+      color: #e5e7eb;
+    }
+
+    .divider {
+      height: 1px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.8), transparent);
+      margin: 12px 0 16px;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .mini-caption {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 32px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 52%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 16px 16px 14px;
+      backdrop-filter: blur(12px);
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 13px;
+      color: #d1d5db;
+    }
+
+    .card ul li {
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .card ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .skill-pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #e5e7eb;
+    }
+
+    /* Contact */
+    .contact-card {
+      background: linear-gradient(120deg, rgba(56, 189, 248, 0.08), rgba(15, 23, 42, 0.96));
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 18px 18px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .contact-card p {
+      font-size: 13px;
+      color: #d1d5db;
+      margin-bottom: 8px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .contact-link {
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #0b1120;
+      color: #e5e7eb;
+      border: 1px solid rgba(15, 23, 42, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-link span.icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #020617;
+      font-size: 11px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-top: 1px solid #111827;
+      padding-top: 12px;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">SINDHUJA SEKARAN</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Highlights</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <div class="hero-role">
+            <span class="dot"></span>
+            <span>Project Manager · Technical Operations</span>
+          </div>
+          <h1>Driving global IT operations through automation, reliability, and service excellence.</h1>
+          <p class="hero-summary">
+            With over 15 years in IT and 1.5 years as Technical Operations Manager at TransUnion, I specialize in global
+            service improvement, automation, and IT service management. My focus is on driving operational excellence
+            through DevOps and AIOps, implementing automation solutions, and standardizing workflows to enhance
+            efficiency.
+          </p>
+          <p class="hero-summary">
+            Leveraging PMP certification and technical project leadership, I collaborate with cross-functional teams to
+            optimize cloud and on-premises infrastructure operations. My mission is to ensure seamless service delivery
+            while fostering innovation through automation and process improvements.
+          </p>
+
+          <div class="hero-tags">
+            <span class="tag-pill">PMP® Certified</span>
+            <span class="tag-pill">Project & Delivery Management</span>
+            <span class="tag-pill">DevOps & AIOps</span>
+            <span class="tag-pill">Cloud & Infrastructure</span>
+            <span class="tag-pill">ITSM & Operational Excellence</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#experience" class="btn btn-primary">View Experience</a>
+            <a href="#contact" class="btn btn-ghost">Connect on LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Key professional metrics">
+          <div class="hero-card-inner">
+            <div class="badge">Snapshot</div>
+
+            <div class="metric-row">
+              <div>
+                <strong>15+ yrs</strong>
+                <span>IT project, service & operations leadership</span>
+              </div>
+              <div>
+                <strong>Global</strong>
+                <span>Multi-cloud, datacenter & 24×7 operations</span>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="chip-row">
+              <span class="chip">End-to-End Project Delivery</span>
+              <span class="chip">Multi-Cloud Operations</span>
+              <span class="chip">CI/CD & Automation</span>
+              <span class="chip">ITSM (Incident / Problem / Change)</span>
+              <span class="chip">Monitoring & Observability</span>
+              <span class="chip">Global Team Leadership</span>
+            </div>
+
+            <p class="mini-caption">
+              I bring structure, stability, and continuous improvement to complex operations, while enabling teams to move
+              faster through automation, governance, and data-driven decision-making.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="section-header">
+          <h2 class="section-title">About</h2>
+          <p class="section-subtitle">
+            Project Manager & Technical Operations leader focused on automation-led, reliable service delivery.
+          </p>
+        </div>
+
+        <div class="card">
+          <p style="font-size: 14px; color: #d1d5db; margin-bottom: 6px;">
+            With over 15 years in IT and 1.5 years as Technical Operations Manager at TransUnion, I specialize in global
+            service improvement, automation, and IT service management. My focus is on driving operational excellence
+            through DevOps and AI Ops, implementing automation solutions, and standardizing workflows to enhance
+            efficiency.
+          </p>
+          <p style="font-size: 14px; color: #d1d5db;">
+            Leveraging PMP certification and expertise in technical project leadership, I collaborate with
+            cross-functional teams to optimize cloud and on-premises infrastructure operations. My mission is to ensure
+            seamless service delivery while fostering innovation through automation and process improvements.
+          </p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <div class="section-header">
+          <h2 class="section-title">Skills</h2>
+          <p class="section-subtitle">
+            A comprehensive mix of project management, multi-cloud operations, automation, observability, and leadership.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Project & Delivery Management -->
+          <div class="card">
+            <h3>Project & Delivery Management</h3>
+            <div class="card-meta">End-to-end project lifecycle · Governance</div>
+            <ul>
+              <li>End-to-end project lifecycle management from initiation to closure.</li>
+              <li>Scope definition, planning, and Work Breakdown Structure (WBS).</li>
+              <li>RAID management (Risks, Assumptions, Issues, Dependencies) and change control.</li>
+              <li>Milestone tracking, impact assessment, and stakeholder governance reporting.</li>
+              <li>Cross-functional coordination across DevOps, Cloud, Infra & Security teams.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="skill-pill">End-to-End Delivery</span>
+              <span class="skill-pill">WBS</span>
+              <span class="skill-pill">RAID Management</span>
+              <span class="skill-pill">Change Control</span>
+              <span class="skill-pill">Agile / Scrum</span>
+            </div>
+          </div>
+
+          <!-- Cloud & Infrastructure -->
+          <div class="card">
+            <h3>Cloud & Infrastructure</h3>
+            <div class="card-meta">Multi-cloud · Datacenter · Resilience</div>
+            <ul>
+              <li>Multi-cloud operations across AWS, Azure, and GCP environments.</li>
+              <li>Cloud transformation, workload modernization, and on-prem to cloud orchestration.</li>
+              <li>Datacenter migration & consolidation, backup & storage modernization.</li>
+              <li>VMware virtualization (vCenter, ESXi, vMotion, HA/DRS) and DR/BCP planning.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="skill-pill">AWS · Azure · GCP</span>
+              <span class="skill-pill">Datacenter Migration</span>
+              <span class="skill-pill">VMware (vCenter / ESXi)</span>
+              <span class="skill-pill">Commvault</span>
+              <span class="skill-pill">EMC VNX / Unity / XtremIO</span>
+              <span class="skill-pill">DR & BCP</span>
+            </div>
+          </div>
+
+          <!-- DevOps & Automation -->
+          <div class="card">
+            <h3>DevOps & Automation</h3>
+            <div class="card-meta">CI/CD · GitOps · AIOps</div>
+            <ul>
+              <li>Improving CI/CD pipeline reliability and release consistency.</li>
+              <li>AMI refresh and deployment automation aligned with compliance standards.</li>
+              <li>GitOps delivery using Bitbucket, Jenkins, and Ansible-based workflows.</li>
+              <li>Auto-remediation workflows and AIOps implementation for proactive operations.</li>
+              <li>Workflow automation using low-code platforms and API integrations.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="skill-pill">Jenkins</span>
+              <span class="skill-pill">Bitbucket</span>
+              <span class="skill-pill">Ansible</span>
+              <span class="skill-pill">CI/CD</span>
+              <span class="skill-pill">GitOps</span>
+              <span class="skill-pill">AIOps</span>
+            </div>
+          </div>
+
+          <!-- Monitoring & Observability -->
+          <div class="card">
+            <h3>Monitoring & Observability</h3>
+            <div class="card-meta">Metrics · Alerts · MTTR</div>
+            <ul>
+              <li>Designing monitoring and observability strategies using Splunk, Grafana, SCOM.</li>
+              <li>Metric and alert optimization to reduce noise and increase actionable signals.</li>
+              <li>Automated incident creation and routing based on alert intelligence.</li>
+              <li>MTTR improvement through proactive insights and trend-based remediation.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="skill-pill">Splunk</span>
+              <span class="skill-pill">Grafana</span>
+              <span class="skill-pill">SCOM</span>
+              <span class="skill-pill">Alert Optimization</span>
+              <span class="skill-pill">MTTR Improvement</span>
+            </div>
+          </div>
+
+          <!-- Operational Excellence -->
+          <div class="card">
+            <h3>Operational Excellence</h3>
+            <div class="card-meta">ITSM · SIPs · Governance</div>
+            <ul>
+              <li>ITSM processes across Incident, Problem, and Change management.</li>
+              <li>Root Cause Analysis (RCA/ICA), Service Improvement Plans, and governance.</li>
+              <li>Development of SOPs, runbooks, and KEDB for standardized operations.</li>
+              <li>24×7 global operations leadership, capacity planning, and cost governance.</li>
+              <li>Vendor and contract management to ensure service and cost alignment.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="skill-pill">ITSM</span>
+              <span class="skill-pill">RCA / ICA</span>
+              <span class="skill-pill">SIPs</span>
+              <span class="skill-pill">Runbooks & SOPs</span>
+              <span class="skill-pill">Capacity Planning</span>
+              <span class="skill-pill">Cost Governance</span>
+            </div>
+          </div>
+
+          <!-- Leadership & Collaboration -->
+          <div class="card">
+            <h3>Leadership & Collaboration</h3>
+            <div class="card-meta">Teams · Stakeholders · Customers</div>
+            <ul>
+              <li>Leading global teams of 80–150+ engineers in high-availability environments.</li>
+              <li>Mentoring and coaching junior PMs and engineers on delivery and ownership.</li>
+              <li>Conflict resolution, decision-making, and executive-level communication.</li>
+              <li>Customer success and relationship management across key accounts.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="skill-pill">Global Team Leadership</span>
+              <span class="skill-pill">Mentoring & Coaching</span>
+              <span class="skill-pill">Executive Communication</span>
+              <span class="skill-pill">Customer Success</span>
+              <span class="skill-pill">Stakeholder Management</span>
+            </div>
+          </div>
+
+          <!-- Tools & Platforms -->
+          <div class="card">
+            <h3>Tools & Platforms</h3>
+            <div class="card-meta">Ecosystem</div>
+            <ul>
+              <li>ITSM platforms: ServiceNow, Remedy for incident, change & request workflows.</li>
+              <li>DevOps toolchain: Jenkins, Bitbucket, Git for CI/CD and version control.</li>
+              <li>Cloud & infra tools: AWS services, VMware vCenter/vROps, Commvault, EMC storage.</li>
+            </ul>
+            <div class="pill-row">
+              <span class="skill-pill">ServiceNow</span>
+              <span class="skill-pill">Remedy</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">VMware vCenter</span>
+              <span class="skill-pill">vROps</span>
+              <span class="skill-pill">Commvault</span>
+              <span class="skill-pill">EMC Storage</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <div class="section-header">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">
+            Roles focused on multi-cloud operations, automation, service stability, and global delivery.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>Technical Operations Manager</h3>
+            <div class="card-meta">TransUnion · 1.5+ years</div>
+            <ul>
+              <li>Led global IT operations with focus on reliability, stability, and operational excellence.</li>
+              <li>Drove automation, AIOps, and workflow standardization across cloud and on-prem infrastructure.</li>
+              <li>Partnered with DevOps, Cloud, Infra & Security teams to streamline change and release processes.</li>
+              <li>Handled major incidents and escalations with structured communication and clear action plans.</li>
+              <li>Mentored operations teams on incident handling, RCA, and continuous improvement mindset.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Project & Service Management Roles</h3>
+            <div class="card-meta">Multiple IT roles · 15+ years total experience</div>
+            <ul>
+              <li>Managed complex infrastructure, cloud, and transformation projects end-to-end.</li>
+              <li>Implemented governance models, dashboards, and KPIs for project and service performance.</li>
+              <li>Led 24×7 global support operations across multi-region, multi-technology environments.</li>
+              <li>Collaborated closely with business, engineering, and vendor partners to meet SLAs and cost targets.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Highlights -->
+      <section id="projects">
+        <div class="section-header">
+          <h2 class="section-title">Highlights & Impact</h2>
+          <p class="section-subtitle">
+            How I apply PMP, ITSM, DevOps, and automation to create measurable, operational outcomes.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>CI/CD & Release Stability</h3>
+            <div class="card-meta">DevOps & Delivery</div>
+            <ul>
+              <li>Partnered with DevOps teams to enhance CI/CD pipeline reliability and governance.</li>
+              <li>Introduced AMI refresh and automated deployment standards, reducing manual errors and risk.</li>
+              <li>Aligned release cycles with change management and operational readiness requirements.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Service Improvement & Incident Reduction</h3>
+            <div class="card-meta">Operational Excellence</div>
+            <ul>
+              <li>Defined Service Improvement Plans (SIPs) based on trend analysis and RCA outcomes.</li>
+              <li>Standardized SOPs, runbooks, and KEDB for faster and consistent incident resolution.</li>
+              <li>Worked with monitoring and AIOps teams to reduce alert noise and improve MTTR.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Cloud & Datacenter Modernization</h3>
+            <div class="card-meta">Cloud & Infra</div>
+            <ul>
+              <li>Supported multi-cloud operations, datacenter migration, and consolidation initiatives.</li>
+              <li>Collaborated on backup & storage modernization using Commvault and EMC platforms.</li>
+              <li>Ensured resilience via DR, BCP planning, and VMware-driven high availability designs.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications & Focus Areas -->
+      <section id="certifications">
+        <div class="section-header">
+          <h2 class="section-title">Certifications & Focus Areas</h2>
+          <p class="section-subtitle">
+            Formal credentials and areas of continuous learning.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>Certifications</h3>
+            <ul>
+              <li>PMP® – Project Management Professional.</li>
+              <li>Additional internal & vendor trainings across automation, ITSM, and infrastructure.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Focus Areas</h3>
+            <ul>
+              <li>Scaling AIOps and automation deeper into daily operations.</li>
+              <li>Driving measurable MTTR reduction and reliability improvements.</li>
+              <li>Strengthening governance, RCA discipline, and service transparency.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            Open to opportunities in project management, technical operations, and automation-led service delivery.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div>
+            <div class="contact-label">Let’s collaborate</div>
+            <p>
+              I’m interested in roles where I can lead complex IT operations, drive automation initiatives, and partner
+              with global teams to deliver reliable, scalable services.
+            </p>
+          </div>
+
+          <div>
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/sindhuja-sekaran-64b128290"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="icon">in</span>
+              <span>Connect with me on LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> Sindhuja Sekaran</span>
+      <span>Built with GitHub Pages</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
